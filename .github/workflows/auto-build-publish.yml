@@ -6,7 +6,7 @@ name: Auto Build Publish Test And Job Summary
 on:
   push:
     branches:
-      - master
+      - '*'
   # Triggers the workflow on labeled PRs only.
   pull_request_target:
     types: [ labeled ]
