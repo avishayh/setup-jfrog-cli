@@ -147,6 +147,7 @@ async function checkConnectionToArtifactory(): Promise<boolean> {
 async function generateJobSummary() {
     try {
         core.startGroup('Generating Job Summary');
+        core.info("hello world")
         await Utils.runCli(['generate-summary-markdown']);
         await JobSummary.setMarkdownAsJobSummary();
         await JobSummary.populateCodeScanningTab();
