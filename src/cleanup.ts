@@ -3,6 +3,7 @@ import { Utils } from './utils';
 import { JobSummary } from './job-summary';
 
 async function cleanup() {
+    core.info("hello world 11")
     if (await shouldSkipCleanup()) {
         return;
     }
@@ -147,7 +148,6 @@ async function checkConnectionToArtifactory(): Promise<boolean> {
 async function generateJobSummary() {
     try {
         core.startGroup('Generating Job Summary');
-        core.info("hello world")
         await Utils.runCli(['generate-summary-markdown']);
         await JobSummary.setMarkdownAsJobSummary();
         await JobSummary.populateCodeScanningTab();
