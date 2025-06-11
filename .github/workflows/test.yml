@@ -6,6 +6,9 @@ on:
     tags-ignore:
       - '**'
   pull_request:
+  repository_dispatch:
+    types: [ manual_trigger ]
+
 jobs:
   test:
     name: Test (${{ matrix.os }}) - (CLI ${{ matrix.cli-version || 'default' }})
